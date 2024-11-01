@@ -22,7 +22,7 @@ describe("Creation of an Expense", () => {
         const newExpenseName = screen.getByText(/Expense1/i);
         const newExpenseCost = screen.getByText("$100");
      
-        expect(newExpenseName).toBeInTheDocument();
+        expect(newExpenseName).not.toBeInTheDocument();
         expect(newExpenseCost).toBeInTheDocument();
         
       });
