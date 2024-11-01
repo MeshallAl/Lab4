@@ -10,19 +10,19 @@ describe("Creation of an Expense", () => {
             </AppProvider>
         );
      
-        const createExpenseName = screen.getByLabelText("Name");
+        const createExpenseDescription = screen.getByLabelText("Description");
         const createExpenseCost = screen.getByLabelText("Cost")
         const saveExpenseButton = screen.getByText("Save");
      
-        fireEvent.change(createExpenseName, { target: { value: "Expense1" } });
+        fireEvent.change(createExpenseDescription, { target: { value: "Expense1" } });
         fireEvent.change(createExpenseCost, { target: { value: 100 }, });
         fireEvent.click(saveExpenseButton);
      
         
-        const newExpenseName = screen.getByText(/Expense1/i);
+        const newExpenseDescription = screen.getByText(/Expense1/i);
         const newExpenseCost = screen.getByText("$100");
      
-        expect(newExpenseName).toBeInTheDocument();
+        expect(newExpenseDescription).toBeInTheDocument();
         expect(newExpenseCost).toBeInTheDocument();
         
       });
@@ -37,11 +37,11 @@ describe("Creation of an Expense", () => {
         const totalSpentBefore = screen.getByText("Spent so far: $0");
         expect(totalSpentBefore).toBeInTheDocument();
         
-        const createExpenseName = screen.getByLabelText("Name");
+        const createExpenseDescription = screen.getByLabelText("Description");
         const createExpenseCost = screen.getByLabelText("Cost")
         const saveExpenseButton = screen.getByText("Save");
      
-        fireEvent.change(createExpenseName, { target: { value: "Expense1" } });
+        fireEvent.change(createExpenseDescription, { target: { value: "Expense1" } });
         fireEvent.change(createExpenseCost, { target: { value: 100 }, });
         fireEvent.click(saveExpenseButton);
 
@@ -61,11 +61,11 @@ describe("Creation of an Expense", () => {
         const remainingBefore = screen.getByText("Remaining: $1000");
         expect(remainingBefore).toBeInTheDocument();
         
-        const createExpenseName = screen.getByLabelText("Name");
+        const createExpenseDescription = screen.getByLabelText("Description");
         const createExpenseCost = screen.getByLabelText("Cost")
         const saveExpenseButton = screen.getByText("Save");
      
-        fireEvent.change(createExpenseName, { target: { value: "Expense1" } });
+        fireEvent.change(createExpenseDescription, { target: { value: "Expense1" } });
         fireEvent.change(createExpenseCost, { target: { value: 100 }, });
         fireEvent.click(saveExpenseButton);
 
@@ -85,25 +85,25 @@ describe("Deletion of an Expense", () => {
             </AppProvider>
         );
      
-        const createExpenseName = screen.getByLabelText("Name");
+        const createExpenseDescription = screen.getByLabelText("Description");
         const createExpenseCost = screen.getByLabelText("Cost")
         const saveExpenseButton = screen.getByText("Save");
      
-        fireEvent.change(createExpenseName, { target: { value: "Expense1" } });
+        fireEvent.change(createExpenseDescription, { target: { value: "Expense1" } });
         fireEvent.change(createExpenseCost, { target: { value: 100 }, });
         fireEvent.click(saveExpenseButton);
      
         
-        const newExpenseName = screen.getByText(/Expense1/i);
+        const newExpenseDescription = screen.getByText(/Expense1/i);
         const newExpenseCost = screen.getByText("$100");
      
-        expect(newExpenseName).toBeInTheDocument();
+        expect(newExpenseDescription).toBeInTheDocument();
         expect(newExpenseCost).toBeInTheDocument();
 
         const deleteButton = screen.getByText("x");
         fireEvent.click(deleteButton);
 
-        expect(newExpenseName).not.toBeInTheDocument();
+        expect(newExpenseDescription).not.toBeInTheDocument();
         expect(newExpenseCost).not.toBeInTheDocument();
         
       });
@@ -115,14 +115,14 @@ describe("Deletion of an Expense", () => {
             </AppProvider>
         );
              
-        const createExpenseName = screen.getByLabelText("Name");
+        const createExpenseDescription = screen.getByLabelText("Description");
         const createExpenseCost = screen.getByLabelText("Cost")
         const saveExpenseButton = screen.getByText("Save");
 
         const totalSpentStart = screen.getByText("Remaining: $1000");
         expect(totalSpentStart).toBeInTheDocument();
      
-        fireEvent.change(createExpenseName, { target: { value: "Expense1" } });
+        fireEvent.change(createExpenseDescription, { target: { value: "Expense1" } });
         fireEvent.change(createExpenseCost, { target: { value: 100 }, });
         fireEvent.click(saveExpenseButton);
 
@@ -149,11 +149,11 @@ describe("Deletion of an Expense", () => {
         const remainingStart = screen.getByText("Remaining: $1000");
         expect(remainingStart).toBeInTheDocument();
         
-        const createExpenseName = screen.getByLabelText("Name");
+        const createExpenseDescription = screen.getByLabelText("Description");
         const createExpenseCost = screen.getByLabelText("Cost")
         const saveExpenseButton = screen.getByText("Save");
      
-        fireEvent.change(createExpenseName, { target: { value: "Expense1" } });
+        fireEvent.change(createExpenseDescription, { target: { value: "Expense1" } });
         fireEvent.change(createExpenseCost, { target: { value: 100 }, });
         fireEvent.click(saveExpenseButton);
 
@@ -191,14 +191,14 @@ describe("Budget Balance", () => {
             </AppProvider>
         );
              
-        const createExpenseName = screen.getByLabelText("Name");
+        const createExpenseDescription = screen.getByLabelText("Description");
         const createExpenseCost = screen.getByLabelText("Cost")
         const saveExpenseButton = screen.getByText("Save");
 
         const budgetStart = screen.getByText("Budget: $1000") 
         expect(budgetStart).toBeInTheDocument();
      
-        fireEvent.change(createExpenseName, { target: { value: "Expense1" } });
+        fireEvent.change(createExpenseDescription, { target: { value: "Expense1" } });
         fireEvent.change(createExpenseCost, { target: { value: 100 }, });
         fireEvent.click(saveExpenseButton);
 
@@ -215,14 +215,14 @@ describe("Budget Balance", () => {
             </AppProvider>
         );
      
-        const createExpenseName = screen.getByLabelText("Name");
+        const createExpenseDescription = screen.getByLabelText("Description");
         const createExpenseCost = screen.getByLabelText("Cost")
         const saveExpenseButton = screen.getByText("Save");
 
         const budgetStart = screen.getByText("Budget: $1000") 
         expect(budgetStart).toBeInTheDocument();
      
-        fireEvent.change(createExpenseName, { target: { value: "Expense1" } });
+        fireEvent.change(createExpenseDescription, { target: { value: "Expense1" } });
         fireEvent.change(createExpenseCost, { target: { value: 100 }, });
         fireEvent.click(saveExpenseButton);
 
